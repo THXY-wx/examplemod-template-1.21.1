@@ -1,5 +1,5 @@
 # examplemod-template-1.21.1
-A mod
+A minecraft 1.21.1 mod
 
 ---
-一个模组
+一个我的世界1.21.1的模组
