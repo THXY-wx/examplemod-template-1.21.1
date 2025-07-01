@@ -1,6 +1,7 @@
 package com.thxy.examplemod
 
 import com.mojang.logging.LogUtils
+import com.thxy.examplemod.block.ModBlocks
 import com.thxy.examplemod.item.ModItems
 import net.minecraft.world.item.CreativeModeTabs
 import net.neoforged.api.distmarker.Dist
@@ -32,6 +33,7 @@ class ExampleMod(modEventBus: IEventBus, modContainer: ModContainer) {
         NeoForge.EVENT_BUS.register(this)
 
         ModItems.register(modEventBus)
+        ModBlocks.register(modEventBus)
 
         // 将项目注册到广告素材标签页
         modEventBus.addListener<BuildCreativeModeTabContentsEvent?> { event: BuildCreativeModeTabContentsEvent? ->
@@ -52,6 +54,12 @@ class ExampleMod(modEventBus: IEventBus, modContainer: ModContainer) {
         if (event.tabKey == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.BISMUTH)
             event.accept(ModItems.RAW_BISMUTH)
+        }
+        if (event.tabKey == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.BISMUTH_BLOCK)
+        }
+        if (event.tabKey == CreativeModeTabs.NATURAL_BLOCKS){
+            event.accept(ModBlocks.BISMUTH_ORE)
         }
     }
 
