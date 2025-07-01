@@ -1,6 +1,8 @@
 package com.thxy.examplemod
 
 import com.mojang.logging.LogUtils
+import com.thxy.examplemod.item.ModItems
+import net.minecraft.world.item.CreativeModeTabs
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.bus.api.SubscribeEvent
@@ -29,6 +31,8 @@ class ExampleMod(modEventBus: IEventBus, modContainer: ModContainer) {
         // 如果此类中没有@SubscribeEvent注释的函数，请不要添加此行，例如下面的 onServerStarting（）。
         NeoForge.EVENT_BUS.register(this)
 
+        ModItems.register(modEventBus)
+
         // 将项目注册到广告素材标签页
         modEventBus.addListener<BuildCreativeModeTabContentsEvent?> { event: BuildCreativeModeTabContentsEvent? ->
             this.addCreative(
@@ -45,6 +49,10 @@ class ExampleMod(modEventBus: IEventBus, modContainer: ModContainer) {
 
     // 将示例块项添加到 Building Block 选项卡
     private fun addCreative(event: BuildCreativeModeTabContentsEvent) {
+        if (event.tabKey == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.BISMUTH)
+            event.accept(ModItems.RAW_BISMUTH)
+        }
     }
 
     // 您可以使用 SubscribeEvent 并让 Event Bus discover 方法来调用
