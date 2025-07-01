@@ -3,5 +3,8 @@
   "item.examplemod.raw_bismuth": "生铋",
 
   "block.examplemod.bismuth_block": "铋块",
-  "block.examplemod.bismuth_ore": "铋矿"
+  "block.examplemod.bismuth_ore": "铋矿",
+
+  "creativetab.examplemod.example_items": "示例物品",
+  "creativetab.examplemod.example_blocks": "示例方块"
 }
