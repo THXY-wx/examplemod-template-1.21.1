@@ -61,7 +61,10 @@ class ExampleMod(modEventBus: IEventBus, modContainer: ModContainer) {
     }
 
     // 您可以使用 EventBusSubscriber 自动注册带有 @SubscribeEvent 注释的类中的所有静态方法
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT])
+    @EventBusSubscriber(
+        modid = MOD_ID,
+        bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT]
+    )
     object ClientModEvents {
         @SubscribeEvent
         fun onClientSetup(event: FMLClientSetupEvent?) {

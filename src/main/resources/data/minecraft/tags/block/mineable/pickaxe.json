@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "examplemod:bismuth_block",
+    "examplemod:bismuth_ore",
+    "examplemod:bismuth_deepslate_ore"
+  ]
+}

@@ -52,6 +52,7 @@ class ModCreativeModeTabs {
                     .displayItems { itemDisplayParams, output ->
                         output.accept(ModBlocks.Companion.BISMUTH_BLOCK)
                         output.accept(ModBlocks.Companion.BISMUTH_ORE)
+                        output.accept(ModBlocks.Companion.BISMUTH_DEEPSLATE_ORE)
                     }
                     .build()
             }
