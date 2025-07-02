@@ -16,21 +16,25 @@ class ModCreativeModeTabs {
     companion object {
         val CREATIVE_MODE_TAB: DeferredRegister<CreativeModeTab> =
             DeferredRegister.create(
-                Registries.CREATIVE_MODE_TAB, ExampleMod.Companion.MOD_ID
+                Registries.CREATIVE_MODE_TAB,
+                ExampleMod.MOD_ID
             )
 
         val EXAMPLE_ITEMS_TAB: Supplier<CreativeModeTab> =
             CREATIVE_MODE_TAB.register("example_items_tab") { _ ->
                 CreativeModeTab.builder()
-                    .icon { ItemStack(ModItems.Companion.BISMUTH.get()) }
+                    .icon {
+                        ItemStack(ModItems.BISMUTH.get())
+                    }
                     .title(
                         Component.translatable(
                             "creativetab.examplemod.example_items"
                         )
                     )
                     .displayItems { itemDisplayParams, output ->
-                        output.accept(ModItems.Companion.BISMUTH)
-                        output.accept(ModItems.Companion.RAW_BISMUTH)
+                        output.accept(ModItems.BISMUTH)
+                        output.accept(ModItems.RAW_BISMUTH)
+                        output.accept(ModItems.CHISEL)
                     }
                     .build()
             }
@@ -38,10 +42,13 @@ class ModCreativeModeTabs {
         val EXAMPLE_BLOCKS_TAB: Supplier<CreativeModeTab> =
             CREATIVE_MODE_TAB.register("example_blocks_tab") { _ ->
                 CreativeModeTab.builder()
-                    .icon { ItemStack(ModBlocks.Companion.BISMUTH_BLOCK.get()) }
+                    .icon {
+                        ItemStack(ModBlocks.BISMUTH_BLOCK.get())
+                    }
                     .withTabsBefore(
                         ResourceLocation.fromNamespaceAndPath(
-                            ExampleMod.MOD_ID, "example_items_tab"
+                            ExampleMod.MOD_ID,
+                            "example_items_tab"
                         )
                     )
                     .title(
@@ -50,9 +57,9 @@ class ModCreativeModeTabs {
                         )
                     )
                     .displayItems { itemDisplayParams, output ->
-                        output.accept(ModBlocks.Companion.BISMUTH_BLOCK)
-                        output.accept(ModBlocks.Companion.BISMUTH_ORE)
-                        output.accept(ModBlocks.Companion.BISMUTH_DEEPSLATE_ORE)
+                        output.accept(ModBlocks.BISMUTH_BLOCK)
+                        output.accept(ModBlocks.BISMUTH_ORE)
+                        output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE)
                     }
                     .build()
             }

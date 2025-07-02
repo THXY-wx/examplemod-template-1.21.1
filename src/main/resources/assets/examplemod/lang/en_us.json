@@ -1,6 +1,7 @@
 {
   "item.examplemod.bismuth": "Bismuth",
   "item.examplemod.raw_bismuth": "Raw Bismuth",
+  "item.examplemod.chisel": "chisel",
 
   "block.examplemod.bismuth_block": "Block Of Bismuth",
   "block.examplemod.bismuth_ore": "Bismuth Ore",

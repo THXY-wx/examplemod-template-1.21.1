@@ -1,6 +1,7 @@
 {
   "item.examplemod.bismuth": "铋",
   "item.examplemod.raw_bismuth": "粗铋",
+  "item.examplemod.chisel": "凿子",
 
   "block.examplemod.bismuth_block": "铋块",
   "block.examplemod.bismuth_ore": "铋矿石",

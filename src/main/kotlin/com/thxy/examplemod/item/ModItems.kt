@@ -1,6 +1,7 @@
 package com.thxy.examplemod.item
 
 import com.thxy.examplemod.ExampleMod
+import com.thxy.examplemod.item.custom.ChiselItem
 import net.minecraft.world.item.Item
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.neoforge.registries.DeferredItem
@@ -19,7 +20,13 @@ class ModItems {
             ITEMS.register("raw_bismuth") { _ ->
                 Item(Item.Properties())
             }
-
+        val CHISEL: DeferredItem<Item> =
+            ITEMS.register("chisel") { _ ->
+                ChiselItem(
+                    Item.Properties()
+                        .durability(32)
+                )
+            }
 
 
         fun register(eventBus: IEventBus) {

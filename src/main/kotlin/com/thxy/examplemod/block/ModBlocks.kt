@@ -19,7 +19,7 @@ class ModBlocks {
         val BLOCKS: DeferredRegister.Blocks =
             DeferredRegister.createBlocks(ExampleMod.MOD_ID)
 
-        val BISMUTH_BLOCK: DeferredBlock<Block> =
+        val BISMUTH_BLOCK =
             registerBlock("bismuth_block") {
                 Block(
                     BlockBehaviour.Properties.of()
@@ -28,7 +28,7 @@ class ModBlocks {
                         .sound(SoundType.AMETHYST)
                 )
             }
-        val BISMUTH_ORE: DeferredBlock<Block> =
+        val BISMUTH_ORE =
             registerBlock("bismuth_ore") {
                 DropExperienceBlock(
                     UniformInt.of(2, 4),
@@ -38,7 +38,7 @@ class ModBlocks {
                         .sound(SoundType.STONE)
                 )
             }
-        val BISMUTH_DEEPSLATE_ORE: DeferredBlock<Block> =
+        val BISMUTH_DEEPSLATE_ORE =
             registerBlock("bismuth_deepslate_ore") {
                 DropExperienceBlock(
                     UniformInt.of(3, 6),
